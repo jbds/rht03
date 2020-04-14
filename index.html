@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RHT03</title>
+  <!-- add styling for main container -->
+  <style type="text/css">
+    #main {
+      position: fixed; 
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 20%;
+      overflow: scroll;
+      background-image: url(./src/images/green_baize.jpg);
+      /* stretch image to always fill */
+      background-size: 100% 100%;
+      border: saddlebrown 0px solid;
+      color: black;
+    }
+    #sidebar1 {
+      position: fixed;
+      top: 0;
+      bottom: 67%;
+      left: 80%;
+      right: 0;
+      background: #e0e0e0;
+      color: gray;
+      text-align: center;
+    }
+    #sidebar2 {
+      position: fixed;
+      top: 33%;
+      bottom: 33%;
+      left: 80%;
+      right: 0;
+      background: #f0f0f0;
+      color: gray;
+    }
+    #sidebar3 {
+      position: fixed;
+      top: 67%;
+      bottom: 0;
+      left: 80%;
+      right: 0;
+      background: #e0e0e0;
+      color: black;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- add a root element -->
+  <div id="root"></div>
+  <script>
+    // stub a variable ReactJS checks. ReactJS assumes you're using a bundler, NodeJS or similar system that provides it the `process.env.NODE_ENV` variable.
+    window.process = {
+      env: {
+        NODE_ENV: 'development'
+      }
+    };
+  </script>
+
+  <!-- This is https://github.com/marijnh/moduleserve, the secret sauce that allows us not need to bundle things during development, and have instantaneous iteration feedback, without any hot-reloading or extra build pipeline needed. -->
+  <script src="/moduleserve/load.js" data-module="/src/Index.bs.js"></script>
+  <!-- Our little watcher. Super clean. Check it out! -->
+  <script src="/watcher.js"></script>
+</body>
+</html>
